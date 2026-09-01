@@ -4,11 +4,11 @@ This repository builds training data for Bangladesh cloud/solar modeling and tra
 
 ## Project Files
 
-- `fetch_aux.py`: Downloads monthly ERA5 single-level data for 2023 from Copernicus CDS and stores each month under `aux_data1/era5_bd_YYYY_MM/`.
 - `pipeline.py`: Builds integrated `.npz` training samples by combining:
   - Himawari-9 satellite bands (`B03`, `B13`) from NOAA S3
   - ERA5 auxiliary features (cloud cover, solar radiation, 2m temperature)
   - CERES labels from NASA Earthdata
+  - also optimiazed for different region data 
 - `train.py`: Trains a dual-head U-Net-like Keras model on generated `.npz` files.
 
 ## Data Flow
